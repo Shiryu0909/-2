@@ -5,8 +5,9 @@
     <script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
   </head>
 <body>
- <h1>背景色を付けた</h1>
- 背景色をつけてみた
+ <h1>板ポリにテクスチャ―</h1>
+ 板ポリにテクスチャ―貼ってみた<br>
+ 非透過と透過
  <script>
       // ページの読み込みを待つ
       window.addEventListener('DOMContentLoaded', init);
@@ -21,7 +22,7 @@
         document.body.appendChild(renderer.domElement);
         renderer.setSize(width, height);
         // 背景の色を設定
-        renderer.setClearColor(0xaaaaaa);
+        renderer.setClearColor(0xffffdd);
 
 
         // シーンを作成
@@ -62,13 +63,18 @@
         var mat1 = new THREE.MeshLambertMaterial({transparent: true});
         mat1.map = texture0;
 
-        // 箱を作成
-        var geometry = new THREE.BoxGeometry(1, 1, 1);
-        var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
-        var box = new THREE.Mesh(geometry, material);
-        box.position.set(0,0,0); //位置を指定
-        scene.add(box);   // シーンに追加
+        // 板ポリ左を作成
+        var geometry = new THREE.PlaneGeometry(1, 2);
+        var tree0 = new THREE.Mesh(geometry, mat0);
+        tree0.position.set(-1,1,0); //位置を指定
+        scene.add(tree0);
 
+        // 板ポリ右を作成
+        var geometry = new THREE.PlaneGeometry(1, 2);
+        var tree1 = new THREE.Mesh(geometry, mat1);
+        tree1.position.set(1,1,0); //位置を指定
+        scene.add(tree1);
+        
         update();
 
         // 毎フレーム時に実行されるループイベントです
@@ -76,11 +82,6 @@
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(update);
-
-           // 箱を回転させる
-          box.rotation.x += 0.01;
-          box.rotation.y += 0.01;
-
         }
       }
     </script>
