@@ -66,14 +66,14 @@
         // 板ポリ左を作成
         var geometry = new THREE.PlaneGeometry(1, 2);
         var yanagisawa = new THREE.Mesh(geometry, mat0);
-        tree0.position.set(-1,1,0); //位置を指定
+        yanagisawa.position.set(-1,1,0); //位置を指定
         scene.add(yanagisawa);
 
         // 板ポリ右を作成
         var geometry = new THREE.PlaneGeometry(1, 2);
         var yanagisawa = new THREE.Mesh(geometry, mat1);
         yanagisawa.position.set(1,1,0); //位置を指定
-        scene.add(tree1);
+        scene.add(yanagisawa);
         
         update();
 
