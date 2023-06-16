@@ -55,7 +55,7 @@
 
         // 木テクスチャー読み込み
         var textureLoader = new THREE.TextureLoader();  
-        var texture0 = textureLoader.load("img/tree0.png");
+        var texture0 = textureLoader.load("img/yanagisawa.png");
         // 板ポリ左用
         var mat0 = new THREE.MeshLambertMaterial();
         mat0.map = texture0;
@@ -65,14 +65,14 @@
 
         // 板ポリ左を作成
         var geometry = new THREE.PlaneGeometry(1, 2);
-        var tree0 = new THREE.Mesh(geometry, mat0);
+        var yanagisawa = new THREE.Mesh(geometry, mat0);
         tree0.position.set(-1,1,0); //位置を指定
-        scene.add(tree0);
+        scene.add(yanagisawa);
 
         // 板ポリ右を作成
         var geometry = new THREE.PlaneGeometry(1, 2);
-        var tree1 = new THREE.Mesh(geometry, mat1);
-        tree1.position.set(1,1,0); //位置を指定
+        var yanagisawa = new THREE.Mesh(geometry, mat1);
+        yanagisawa.position.set(1,1,0); //位置を指定
         scene.add(tree1);
         
         update();
