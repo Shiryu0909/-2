@@ -77,6 +77,9 @@
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(update);
+
+          texture.rotation.x += 0.01;
+          texture.rotation.y += 0.01;
         }
       }
     </script>
