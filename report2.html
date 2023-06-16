@@ -64,6 +64,7 @@
         sprite1.scale.set(1,2,1);
         sprite1.position.set(-1,1,0); //位置を指定
         scene.add(sprite1);
+        transform:rotate(360deg)
 
         // 木右
         const sprite2 = new THREE.Sprite(material);
@@ -78,6 +79,8 @@
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(update);
+
+          
         }
       }
     </script>
