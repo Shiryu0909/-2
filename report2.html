@@ -70,9 +70,20 @@
         sprite2.scale.set(1,2,1);
         sprite2.position.set(1,1,0); //位置を指定
         scene.add(sprite2);
-        
+
+        // 柳澤正面
+        const sprite3 = new THREE.Sprite(material);
+        sprite3.scale.set(1,2,1);
+        sprite3.position.set(0,1,1); //位置を指定
+        scene.add(sprite3);
         update();
 
+        // 柳澤後
+        const sprite4 = new THREE.Sprite(material);
+        sprite4.scale.set(1,2,1);
+        sprite4.position.set(0,1,-1); //位置を指定
+        scene.add(sprite4);
+        
         // 毎フレーム時に実行されるループイベントです
         function update() {
           // レンダリング
