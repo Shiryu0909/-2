@@ -47,11 +47,7 @@
         // シーンに追加
         scene.add(directionalLight2);
 
-        // helper
-        const gridHelper = new THREE.GridHelper(2,10); // size, step
-        scene.add(gridHelper);
-        const axisHelper = new THREE.AxisHelper(2); //軸の長さ　X：赤、Y：緑、z：青
-        scene.add(axisHelper);
+        
 
         // 柳澤をスプライトで作成
         var textureLoader = new THREE.TextureLoader();  
@@ -90,16 +86,6 @@
           renderer.render(scene, camera);
           requestAnimationFrame(update);
         }
-        function animate() {
-        requestAnimationFrame(animate);
-
-        // オブジェクトを回転させる
-        sprite1.rotation.z += 0.01;
-        sprite2.rotation.x += 0.01;
-        renderer.render(scene, camera);
-        }
-        // アニメーションを実行
-        animate();
       }
     </script>
 </body>
